@@ -26,10 +26,10 @@ endif
 all: OpenCL
 
 dependents:
-	-cd /home/fidgetsinner/workspace/OpenCL/Release && $(MAKE) clean all
+	-cd /home/gpi/workspace/miscellaneous/OpenCL/Release && $(MAKE) all
 
 # Tool invocations
-OpenCL: $(OBJS) $(USER_OBJS) /home/fidgetsinner/workspace/OpenCL/Release/OpenCL
+OpenCL: $(OBJS) $(USER_OBJS) /home/gpi/workspace/miscellaneous/OpenCL/Release/OpenCL
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C Linker'
 	gcc -L/usr/X11/lib -L/usr/include/CL -o "OpenCL" $(OBJS) $(USER_OBJS) $(LIBS)
@@ -42,6 +42,6 @@ clean:
 	-@echo ' '
 
 .PHONY: all clean dependents
-/home/fidgetsinner/workspace/OpenCL/Release/OpenCL:
+/home/gpi/workspace/miscellaneous/OpenCL/Release/OpenCL:
 
 -include ../makefile.targets

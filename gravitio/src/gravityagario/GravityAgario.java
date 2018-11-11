@@ -251,8 +251,8 @@ public class GravityAgario extends JPanel implements MouseListener, MouseMotionL
 		
 		ParticleX.add((ParticleX.get(launcherID) + ParticleRadius * Math.cos(angle+ Math.PI)));
 		ParticleY.add((ParticleY.get(launcherID) + ParticleRadius * Math.sin(angle+ Math.PI)));
-		ParticleXvel.add(ParticleXvel.get(launcherID)+(velocity*-Math.cos(angle))+(radialvelocity*-Math.cos(90+angle)));
-		ParticleYvel.add(ParticleYvel.get(launcherID)+(velocity*-Math.sin(angle))+(radialvelocity*-Math.sin(90+angle)));
+		ParticleXvel.add(ParticleXvel.get(launcherID)+(velocity*-Math.cos(angle))+(velocity*-Math.cos(90+angle)));
+		ParticleYvel.add(ParticleYvel.get(launcherID)+(velocity*-Math.sin(angle))+(velocity*-Math.sin(90+angle)));
 		ParticleMa.add(mass);
 		ParticleMa.set(launcherID, (ParticleMa.get(launcherID)-mass));
 	}
@@ -450,7 +450,7 @@ public class GravityAgario extends JPanel implements MouseListener, MouseMotionL
 					{
 						double angle = Math.random()*2*Math.PI;
 					//	LaunchParticle(i,angle, ParticleMa.get(i)/2000, Math.random()*1);
-						SpawnDustParticle(i,angle, (ParticleMa.get(i))/2000, Math.random()*1,1);
+						SpawnDustParticle(i,angle, (ParticleMa.get(i))/4000, 0.3,1);
 					}
 				}
 			}
